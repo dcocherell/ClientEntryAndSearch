@@ -1,0 +1,33 @@
+<!-- clients/templates/clients/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#browse").click(function () {
+                $("#content").load("{% url 'browse' %}");
+            });
+            $("#search").click(function () {
+                $("#content").load("{% url 'search' %}");
+            });
+            $("#create").click(function () {
+                $("#content").load("{% url 'create' %}");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Client Management System</h1>
+    <div>
+        <button id="browse">Browse</button>
+        <button id="search">Search</button>
+        <button id="create">Create</button>
+    </div>
+    <div id="content">
+        <!-- Content will be loaded dynamically here -->
+    </div>
+</body>
+</html>
